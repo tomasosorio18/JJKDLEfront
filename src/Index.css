@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* clase reutilizable */
+.animate-fadeIn {
+  opacity: 0; /* estado inicial */
+  animation-name: fadeInUp;
+  animation-duration: 360ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards; /* mantiene el estado final */
+}
+html {
+  overflow-y: scroll;
+}
