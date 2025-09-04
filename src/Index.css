@@ -12,6 +12,3 @@
   animation-timing-function: ease;
   animation-fill-mode: forwards; /* mantiene el estado final */
 }
-html {
-  overflow-y: scroll;
-}
