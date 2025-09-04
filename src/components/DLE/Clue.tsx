@@ -5,9 +5,18 @@ interface clueProps {
     setMoreClues: React.Dispatch<React.SetStateAction<boolean>>;
     moreClues: boolean;
 }
+interface clues {
+    personality: string;
+    appearance: string;
+    abilities: {
+        special_trait: string;
+        innate_technique: string;
+        description: string;
+    }
+}
 export const Clue = ({ setMoreClues, moreClues }: clueProps) =>{
-    const [clues, setClues] = useState(null);
-    
+    const [clues, setClues] = useState<clues | null>(null);
+
  const getClue = async () => {
    try {
      const responseClue = await getCharacterClue();
@@ -30,7 +39,7 @@ return(<div className="bg-gray-800 text-white p-4 rounded-lg shadow-lg max-w-md 
                     <h1><b>Appearance:</b> {clues.appearance}</h1>
                 </div>
             )}
-            {moreClues && (
+            {moreClues && clues &&(
                 <div className="flex flex-col space-y-2 bg-gray-600">
                     <h1><b>Special trait:</b> {clues.abilities.special_trait}</h1>
                     <h1><b>Innate Technique:</b> {clues.abilities.innate_technique}</h1>

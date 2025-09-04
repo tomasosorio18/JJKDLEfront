@@ -4,10 +4,10 @@ import { useCharacters } from "../../hooks/useCharacters";
 import { Spinner } from "../Spinner";
 import { useHandleGuess } from "../../hooks/useHandleGuesser";
 import { motion } from "motion/react";
-import { Buscador } from "../DLE/Buscador";
+import { Buscador } from "../Buscador";
 import sukunaMark from "../../shared/icon/sukunamarkInv.png"
 import { Picture } from "./Picture";
-import { Winner } from "../DLE/Winner";
+import { Winner } from "../Winner";
 import Confetti from 'react-confetti'
 import { useScrollDown } from "../../hooks/useScrollDown";
 import { usePreviousRecord } from "../../hooks/usePreviousRecord";

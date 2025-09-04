@@ -1,5 +1,5 @@
-import { Buscador } from "./Buscador";
-import { Winner } from "./Winner";
+import { Buscador } from "../Buscador";
+import { Winner } from "../Winner";
 import { Clue } from "./Clue";
 import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'

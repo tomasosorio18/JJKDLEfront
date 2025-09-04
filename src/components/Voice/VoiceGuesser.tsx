@@ -1,8 +1,8 @@
-import { Buscador } from "../DLE/Buscador";
+import { Buscador } from "../Buscador";
 import { Voz } from "./Voz";
 import { useCharacters } from "../../hooks/useCharacters";
 import { useHandleGuess } from "../../hooks/useHandleGuesser";
-import { Winner } from "../DLE/Winner";
+import { Winner } from "../Winner";
 import Confetti from 'react-confetti'
 import { useWindowSize } from "react-use";
 import { useStart } from "../../context/startContext";

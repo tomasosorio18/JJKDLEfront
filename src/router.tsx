@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import { WelcomeView } from './views/WelcomeView';
 import { MainMenuView } from './views/MainMenuView';
 import { Layout } from './layouts/layout';

@@ -1,7 +1,7 @@
-import type { GuessItem } from "../../types/d.type";
-import getogojo from '../../shared/icon/getogojo.png'
-import sukunaFinger from '../../shared/icon/finger.png';
-import domainExpansion from '../../shared/icon/finger2.png';
+import type { GuessItem } from "../types/d.type";
+import getogojo from '../shared/icon/getogojo.png'
+import sukunaFinger from '../shared/icon/finger.png';
+import domainExpansion from '../shared/icon/finger2.png';
 import { motion } from 'framer-motion';
 
 interface WinnerProps{

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Combobox } from "@headlessui/react";
 import { toast, ToastContainer } from "react-toastify";
-import type { Character } from "../../types/d.type";
+import type { Character } from "../types/d.type";
 
-import { FlameButton } from "../FlameButton";
+import { FlameButton } from "./FlameButton";
 
 interface InputDLEProps {
   characters: Character[];
@@ -58,7 +58,7 @@ export const Buscador: React.FC<InputDLEProps> = ({ characters, selected, setsel
             <Combobox.Input
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 z-40 bg-gray-800 text-white placeholder-gray-400"
               onChange={handleSearch}
-              displayValue={(personaje) => (personaje ? personaje.name : "")}
+              displayValue={(personaje: Character | null) => (personaje ? personaje.name : "")}
               placeholder="Search for a sorcerer..."
               autoComplete="off"
             />

@@ -16,6 +16,8 @@ export type Character = {
   group?: string | null;
   grade?: string | null;
   species?: string | null;
+  appearance?: string | null;
+  personality?: string | null;
   abilities?: Abilities | null;
   voice: string;
   profile_url: string;
