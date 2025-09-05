@@ -28,7 +28,7 @@ export const DleGuess = () => {
   const characterName = previousData && previousData.records 
   ? previousData.records.CharacterName 
   : "No hay registros...";
-
+  
   const greenOrRed = (flag?: boolean | null) => (flag ? "text-green-400" : "text-red-400");
 
 

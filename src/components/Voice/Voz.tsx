@@ -5,7 +5,7 @@ export const Voz = ({ src }: { src?: string }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [volume, setVolume] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
-  
+      const API_URL = import.meta.env.VITE_API_URL;
   if (!src || src === "None") return null;
 
   const play = () => {
@@ -86,7 +86,7 @@ export const Voz = ({ src }: { src?: string }) => {
 
         <audio 
           ref={audioRef} 
-          src={src} 
+          src={`${API_URL}${src}`} 
           preload="auto" 
           onEnded={() => setIsPlaying(false)}
         />

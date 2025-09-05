@@ -20,6 +20,7 @@ export const VoiceGuesser = () => {
   const { guesses, hasWon, hasLose, winner, handleGuess } = useHandleGuess({ selected, type: "voice" });
   const charactersWithVoice = characters.filter(char => char.voice && char.voice !== "None");
   const previousData = usePreviousRecord();
+  const API_URL = import.meta.env.VITE_API_URL;
  const bottomRef = useScrollDown([hasWon, hasLose, winner]);
   if (isLoading) {
     return ( 
@@ -100,7 +101,7 @@ export const VoiceGuesser = () => {
               >
                 <img
                   className="w-20 h-20 rounded-full border-2 border-red-500 object-cover"
-                  src={g.character.profile_url}
+                  src={`${API_URL}${g.character.profile_url}`}
                   alt={g.character.name}
                 />
                 <div className="text-center">

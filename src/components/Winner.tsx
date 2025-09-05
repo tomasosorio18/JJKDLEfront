@@ -18,7 +18,7 @@ const CursedEnergyParticle = () => {
   const randomSize = 3 + Math.random() * 4;
   const colors = ['#8B5CF6', '#EC4899', '#6366F1', '#10B981', '#F43F5E'];
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
-
+  
   return (
     <motion.div
       className="absolute rounded-full"
@@ -50,7 +50,7 @@ const CursedEnergyParticle = () => {
 
 export const Winner = ({ winner, guesses, hasLose }: WinnerProps) => {
     if (!winner || guesses.length === 0) return null;
-   
+   const API_URL = import.meta.env.VITE_API_URL;
    
     return (
         <div className="relative bg-gray-900 text-white p-6 rounded-xl shadow-2xl max-w-md mx-auto mt-6 flex flex-col justify-center items-center border-2 border-purple-600 overflow-hidden">
@@ -96,7 +96,7 @@ export const Winner = ({ winner, guesses, hasLose }: WinnerProps) => {
                 transition={{ delay: 0.3, duration: 0.5 }}
             >
                 <img 
-                    src={winner.character.image_url} 
+                    src={`${API_URL}${winner.character.image_url}`} 
                     alt={winner.character.name} 
                     className="rounded-md max-h-48 shadow-lg"
                 />

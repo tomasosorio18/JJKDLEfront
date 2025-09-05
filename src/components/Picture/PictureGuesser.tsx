@@ -18,6 +18,7 @@ export const PictureGuesser = () => {
   const { guesses, hasWon, hasLose, winner, handleGuess } = useHandleGuess({ selected, type: "picture" });
    const charactersWithLargeIMG = characters.filter(char => char.image_url_large);
    const previousData = usePreviousRecord();
+   const API_URL = import.meta.env.VITE_API_URL;
  const bottomRef = useScrollDown([hasWon, hasLose, winner]);
   if (isLoading) {
     return ( 
@@ -95,7 +96,7 @@ export const PictureGuesser = () => {
               >
                 <img
                   className="w-20 h-20 rounded-full border-2 border-red-500 object-cover"
-                  src={g.character.profile_url}
+                  src={`${API_URL}${g.character.profile_url}`}
                   alt={g.character.name}
                 />
                 <div className="text-center">
