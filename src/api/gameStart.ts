@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const gameStart = async () => {
     try {
+        console.log("env", import.meta.env.API_URL)
         const response = await axios.get(`${import.meta.env.API_URL}/game/start`);
         return response.data;
     } catch (error) {
