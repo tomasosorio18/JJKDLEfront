@@ -56,9 +56,12 @@ export const DleGuess = () => {
         <p className="text-sm font-semibold text-purple-300 mb-3"> 
           Channel your cursed energy to guess!
         </p>
-         <p className="text-xs  text-gray-300 mb-3"> 
-          The character from yesterday was: <span className="text-yellow-400 font-bold">{previousData ? previousData.records.CharacterName : "Loading..."}</span>
-        </p>
+                <p className="text-xs text-gray-300 mb-3"> 
+            The character from yesterday was:{" "}
+            <span className="text-yellow-400 font-bold">
+              {previousData?.records?.CharacterName ?? "No hay registros."}
+            </span>
+          </p>
         <Buscador 
           characters={characters} 
           selected={selected} 

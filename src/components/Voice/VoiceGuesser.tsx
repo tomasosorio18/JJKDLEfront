@@ -57,9 +57,12 @@ export const VoiceGuesser = () => {
         
         <p className="text-lg font-semibold text-purple-300 mb-1">Listen to the curse/sorcerer</p>
         <p className="text-sm text-gray-400 mb-6">Channel your cursed energy to identify the voice!</p>
-        <p className="text-xs  text-gray-300 mb-3"> 
-          The character from yesterday was: <span className="text-yellow-400 font-bold">{previousData ? previousData.records.VoiceCharacterName : "Loading..."}</span>
-        </p>
+       <p className="text-xs text-gray-300 mb-3"> 
+  The character from yesterday was:{" "}
+  <span className="text-yellow-400 font-bold">
+    {previousData?.records?.CharacterName ?? "No hay registros."}
+  </span>
+</p>
     
         <div className="mb-8 w-full max-w-md">
           <Voz src={startData.voice} />
