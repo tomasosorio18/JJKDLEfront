@@ -34,13 +34,13 @@ export const StartProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setIsLoading(true);
       await gameStart(); // prepara la partida en backend
       const response = await getSecretChar(); // obtiene el personaje secreto
-  
+      console.log("Secret character response desde eel context:", response);
       setStartData({
-        id: response.GuessCharacterId,
-        voiceId: response.GuessVoiceId,
-        voice: response.Voice,
-        pictureId:response.GuessPictureId,
-        picture: response.Picture
+        id: response.GuessCharacterId || response.guesscharacterid,
+        voiceId: response.GuessVoiceId || response.guessvoiceid ,
+        voice: response.Voice || response.voice,
+        pictureId:response.GuessPictureId || response.guesspictureid,
+        picture: response.Picture || response.picture
       });
     } finally {
       setIsLoading(false);
