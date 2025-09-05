@@ -90,7 +90,7 @@ export const VoiceGuesser = () => {
           <h3 className="text-xl font-bold text-purple-300 bg-purple-900/30 px-4 py-2 rounded-lg border border-purple-600">
             Cursed Techniques Attempted: {guesses.length}
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full" ref={bottomRef}>
             {guesses.map((g, rowIdx) => (
               <motion.div 
                 key={rowIdx} 
