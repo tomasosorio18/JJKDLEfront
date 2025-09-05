@@ -9,11 +9,12 @@ interface pictureProps {
 export const Picture = React.memo(({ startData, attempts, hasWon }: pictureProps) => {
     const [revealed, setRevealed] = useState<boolean>(false)
     const blurClass = hasWon || attempts >= 7 ? "blur-none" : attempts >= 4 ? "blur-sm" : attempts >= 2 ? "blur-md" : "blur-lg"
-
+    const API_URL = import.meta.env.VITE_API_URL;
+    console.log("url", API_URL + startData.picture)
     return (
         <>
         <div className="flex flex-col justify-center items-center">
-             <img src={`${import.meta.env.VITE_API_URL}${startData.picture}`} alt="secret image" draggable={false} className={`w-64 h-64 rounded-lg transition-all duration-500 pointer-events-none
+             <img src={`${API_URL}${startData.picture}`} alt="secret image" draggable={false} className={`w-64 h-64 rounded-lg transition-all duration-500 pointer-events-none
              ${blurClass}
           ${revealed ? "grayscale-0" : "grayscale"} 
         `} />
