@@ -13,7 +13,7 @@ export const Picture = React.memo(({ startData, attempts, hasWon }: pictureProps
     return (
         <>
         <div className="flex flex-col justify-center items-center">
-             <img src={startData.picture} alt="secret image" draggable={false} className={`w-64 h-64 rounded-lg transition-all duration-500 pointer-events-none
+             <img src={`${import.meta.env.VITE_API_URL}${startData.picture}`} alt="secret image" draggable={false} className={`w-64 h-64 rounded-lg transition-all duration-500 pointer-events-none
              ${blurClass}
           ${revealed ? "grayscale-0" : "grayscale"} 
         `} />
