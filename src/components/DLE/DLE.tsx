@@ -25,6 +25,10 @@ export const DleGuess = () => {
   const bottomRef = useScrollDown([hasWon, hasLose, winner]);
   const previousData = usePreviousRecord();
   console.log("Previous Record Data:", previousData);
+  const characterName = previousData && previousData.records 
+  ? previousData.records.CharacterName 
+  : "No hay registros...";
+
   const greenOrRed = (flag?: boolean | null) => (flag ? "text-green-400" : "text-red-400");
 
 
@@ -59,7 +63,7 @@ export const DleGuess = () => {
                 <p className="text-xs text-gray-300 mb-3"> 
             The character from yesterday was:{" "}
             <span className="text-yellow-400 font-bold">
-              {previousData?.records?.CharacterName ?? "No hay registros."}
+              {characterName}
             </span>
           </p>
         <Buscador 
